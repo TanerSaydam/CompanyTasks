@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewlatterWepApi", "NewlatterWepApi\NewlatterWepApi.csproj", "{14C28B0C-8F28-4D5E-905B-8C9B01B7EC78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewlatterWepApi", "NewlatterWepApi\NewlatterWepApi.csproj", "{14C28B0C-8F28-4D5E-905B-8C9B01B7EC78}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "NewlatterUi", "NewlatterUi\NewlatterUi.esproj", "{CBC05B44-4268-41BC-8605-E151D98891B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,12 @@ Global
 		{14C28B0C-8F28-4D5E-905B-8C9B01B7EC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14C28B0C-8F28-4D5E-905B-8C9B01B7EC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14C28B0C-8F28-4D5E-905B-8C9B01B7EC78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBC05B44-4268-41BC-8605-E151D98891B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBC05B44-4268-41BC-8605-E151D98891B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBC05B44-4268-41BC-8605-E151D98891B6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CBC05B44-4268-41BC-8605-E151D98891B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBC05B44-4268-41BC-8605-E151D98891B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBC05B44-4268-41BC-8605-E151D98891B6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
