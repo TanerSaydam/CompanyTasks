@@ -11,15 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleWebApi", "VehicleWeb
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "eCommerce", "eCommerce", "{2E5FEFD7-DE0E-4F3B-96C9-A9A2D4813E20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC", "MVC\MVC.csproj", "{BC8E198D-DFBC-4B1A-8D2F-2F7D985650C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eCommerce.MVC", "MVC\eCommerce.MVC.csproj", "{BC8E198D-DFBC-4B1A-8D2F-2F7D985650C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{36A80F96-EE7B-4C54-B4B1-0CEA8BC6E678}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eCommerce.Application", "Application\eCommerce.Application.csproj", "{36A80F96-EE7B-4C54-B4B1-0CEA8BC6E678}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{01BFB04A-E4F7-4DD1-A5EC-B163DB1CB48E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eCommerce.Service", "Service\eCommerce.Service.csproj", "{01BFB04A-E4F7-4DD1-A5EC-B163DB1CB48E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{E51342A5-E7C1-48D6-BC45-21711ED8832C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eCommerce.DataAccess", "DataAccess\eCommerce.DataAccess.csproj", "{E51342A5-E7C1-48D6-BC45-21711ED8832C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{F728DDC7-C567-46BC-970D-6CAC8ABFE163}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eCommerce.Entity", "Entity\eCommerce.Entity.csproj", "{F728DDC7-C567-46BC-970D-6CAC8ABFE163}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
