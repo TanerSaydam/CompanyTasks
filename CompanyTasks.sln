@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewlatterWepApi", "NewlatterWepApi\NewlatterWepApi.csproj", "{14C28B0C-8F28-4D5E-905B-8C9B01B7EC78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14C28B0C-8F28-4D5E-905B-8C9B01B7EC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C28B0C-8F28-4D5E-905B-8C9B01B7EC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C28B0C-8F28-4D5E-905B-8C9B01B7EC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C28B0C-8F28-4D5E-905B-8C9B01B7EC78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CCC497A-A622-422B-A72F-C429B893E4BA}
+	EndGlobalSection
+EndGlobal
