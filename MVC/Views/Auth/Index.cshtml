@@ -1,0 +1,23 @@
+﻿@{
+}
+-
+<div class="container">
+    <form action="/Auth/Login" method="post">
+        <div class="col-md-4 offset-4">
+            @if (TempData["errors"] != null){
+                <h5 class="alert alert-danger">@TempData["errors"]</h5>
+            }
+            <div class="form-group mt-2">
+                <label for="userName">User Name or Email</label>
+                <input class="form-control" required id="userName" name="userName" />
+            </div>
+            <div class="form-group mt-2">
+                <label for="password">Password</label>
+                <input type="password" required class="form-control" id="password" name="password" />
+            </div>
+            <div class="form-group mt-2">
+                <button class="btn btn-primary w-100">Sign In</button>
+            </div>
+        </div>
+    </form>
+</div>
