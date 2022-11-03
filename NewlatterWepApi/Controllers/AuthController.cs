@@ -55,6 +55,7 @@ namespace NewlatterWepApi.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
+
             var user = await _context.Users.Where(p => p.UserName == loginDto.UserName).FirstOrDefaultAsync();
             if(user == null)
                 user = await _context.Users.Where(p => p.Email == loginDto.UserName).FirstOrDefaultAsync();
