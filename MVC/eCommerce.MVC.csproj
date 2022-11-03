@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
-    <ProjectReference Include="..\Service\Service.csproj" />
+    <ProjectReference Include="..\DataAccess\eCommerce.DataAccess.csproj" />
+    <ProjectReference Include="..\Service\eCommerce.Service.csproj" />
   </ItemGroup>
 
 </Project>
