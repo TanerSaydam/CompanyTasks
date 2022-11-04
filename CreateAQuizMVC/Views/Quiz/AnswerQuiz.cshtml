@@ -1,0 +1,304 @@
+﻿@model Quiz
+@{
+    string question = "";
+    string answerA = "";
+    string answerB = "";
+    string answerC = "";
+    string answerD = "";
+
+    string formAId = "";
+    string formBId = "";
+    string formCId = "";
+    string formDId = "";
+    string answerAId = "";
+    string answerBId = "";
+    string answerCId = "";
+    string answerDId = "";
+}
+<!--Aynı soruda tüm şıklar seçilebiliyor! Düzelt!-->
+<div class="container mt-4">
+    <h1 class="text-center">@Model.Title</h1>
+    <p>@Model.Description</p>
+    <hr />
+    <div class="row">
+        <input id="quizId" value="@Model.Id" hidden="hidden" />
+        <!--Soru 1-->
+        @for (int i = 0; i < 4; i++)
+        {
+            if (i == 0)
+            {
+                question = Model.Question1;
+                answerA = Model.Answer1A;
+                answerB = Model.Answer1B;
+                answerC = Model.Answer1C;
+                answerD = Model.Answer1D;
+
+                formAId = "form" + (i + 1) + "A";
+                formBId = "form" + (i + 1) + "B";
+                formCId = "form" + (i + 1) + "C";
+                formDId = "form" + (i + 1) + "D";
+                answerAId = "answer" + (i + 1) + "A";
+                answerBId = "answer" + (i + 1) + "B";
+                answerCId = "answer" + (i + 1) + "C";
+                answerDId = "answer" + (i + 1) + "D";
+            }
+            else if (i == 1)
+            {
+                question = Model.Question2;
+                answerA = Model.Answer2A;
+                answerB = Model.Answer2B;
+                answerC = Model.Answer2C;
+                answerD = Model.Answer2D;
+
+                formAId = "form" + (i + 1) + "A";
+                formBId = "form" + (i + 1) + "B";
+                formCId = "form" + (i + 1) + "C";
+                formDId = "form" + (i + 1) + "D";
+                answerAId = "answer" + (i + 1) + "A";
+                answerBId = "answer" + (i + 1) + "B";
+                answerCId = "answer" + (i + 1) + "C";
+                answerDId = "answer" + (i + 1) + "D";
+            }
+            else if (i == 2)
+            {
+                question = Model.Question3;
+                answerA = Model.Answer3A;
+                answerB = Model.Answer3B;
+                answerC = Model.Answer3C;
+                answerD = Model.Answer3D;
+
+                formAId = "form" + (i + 1) + "A";
+                formBId = "form" + (i + 1) + "B";
+                formCId = "form" + (i + 1) + "C";
+                formDId = "form" + (i + 1) + "D";
+                answerAId = "answer" + (i + 1) + "A";
+                answerBId = "answer" + (i + 1) + "B";
+                answerCId = "answer" + (i + 1) + "C";
+                answerDId = "answer" + (i + 1) + "D";
+            }
+            else if (i == 3)
+            {
+                question = Model.Question4;
+                answerA = Model.Answer4A;
+                answerB = Model.Answer4B;
+                answerC = Model.Answer4C;
+                answerD = Model.Answer4D;
+
+                formAId = "form" + (i + 1) + "A";
+                formBId = "form" + (i + 1) + "B";
+                formCId = "form" + (i + 1) + "C";
+                formDId = "form" + (i + 1) + "D";
+                answerAId = "answer" + (i + 1) + "A";
+                answerBId = "answer" + (i + 1) + "B";
+                answerCId = "answer" + (i + 1) + "C";
+                answerDId = "answer" + (i + 1) + "D";
+            }
+            <div class="col-md-6 form-group mt-2">
+                <label>1) @question</label>
+                <div class="form-check" id="@formAId">
+                    <input class="form-check-input" type="radio" name="@answerAId" id="@answerAId">
+                    <label class="form-check-label" for="@answerAId">
+                        @answerA
+                    </label>
+                </div>
+                <div class="form-check" id="@formBId">
+                    <input class="form-check-input" type="radio" name="@answerAId" id="@answerBId">
+                    <label class="form-check-label" for="@answerBId">
+                        @answerB
+                    </label>
+                </div>
+                <div class="form-check" id="@formCId">
+                    <input class="form-check-input" type="radio" name="@answerAId" id="@answerCId">
+                    <label class="form-check-label" for="@answerCId">
+                        @answerC
+                    </label>
+                </div>
+                <div class="form-check" id="@formDId">
+                    <input class="form-check-input" type="radio" name="@answerAId" id="@answerDId">
+                    <label class="form-check-label" for="@answerDId">
+                        @answerD
+                    </label>
+                </div>
+            </div>
+        }
+
+
+    </div>
+
+    <div class="col-md-4 offset-4 mt-4">
+        <button class="btn btn-success w-100" onclick="checkAnswer()">Sınavı Bitir</button>
+    </div>
+</div>
+
+
+<style>
+    .form-check {
+        border: 1px solid;
+    }
+
+    .current {
+        background-color: forestgreen;
+        color: white;
+        font-weight: 700;
+    }
+
+    .wrong {
+        background-color: red;
+        color: white;
+        font-weight: 700;
+    }
+</style>
+
+<script>
+    function checkAnswer() {
+        let answer1 = "";
+        let answer1Id = "";
+        let answer2 = "";
+        let answer2Id = "";
+        let answer3 = "";
+        let answer3Id = "";
+        let answer4 = "";
+        let answer4Id = "";
+        let quizId = $("#quizId").val();
+        var url = '@Url.Action("CheckAnswer", "Quiz")'
+
+        if ($("#answer1A:checked").val() != undefined) {
+            answer1 = "A"
+            answer1Id = "form1A"
+        }
+        else if ($("#answer1B:checked").val() != undefined) {
+            answer1 = "B"
+            answer1Id = "form1B"
+        }
+        else if ($("#answer1C:checked").val() != undefined) {
+            answer1 = "C"
+            answer1Id = "form1C"
+        }
+        else if ($("#answer1D:checked").val() != undefined) {
+            answer1 = "D"
+            answer1Id = "form1D"
+        }
+
+        if ($("#answer2A:checked").val() != undefined) {
+            answer2 = "A"
+            answer2Id = "form2A"
+        }
+        else if ($("#answer2B:checked").val() != undefined) {
+            answer2 = "B"
+            answer2Id = "form2B"
+        }
+        else if ($("#answer2C:checked").val() != undefined) {
+            answer2 = "C"
+            answer2Id = "form2C"
+        }
+        else if ($("#answer2D:checked").val() != undefined) {
+            answer2 = "D"
+            answer2Id = "form2D"
+        }
+
+        if ($("#answer3A:checked").val() != undefined) {
+            answer3 = "A"
+            answer3Id = "form3A"
+        }
+        else if ($("#answer3B:checked").val() != undefined) {
+            answer3 = "B"
+            answer3Id = "form3B"
+        }
+        else if ($("#answer3C:checked").val() != undefined) {
+            answer3 = "C"
+            answer3Id = "form3C"
+        }
+        else if ($("#answer3D:checked").val() != undefined) {
+            answer3 = "D"
+            answer3Id = "form3D"
+        }
+
+        if ($("#answer4A:checked").val() != undefined) {
+            answer4 = "A"
+            answer4Id = "form4A"
+        }
+        else if ($("#answer4B:checked").val() != undefined) {
+            answer4 = "B"
+            answer4Id = "form4B"
+        }
+        else if ($("#answer4C:checked").val() != undefined) {
+            answer4 = "C"
+            answer4Id = "form4C"
+        }
+        else if ($("#answer4D:checked").val() != undefined) {
+            answer4 = "D"
+            answer4Id = "form4D"
+        }
+
+
+        console.log(answer1);
+        console.log(answer2);
+        console.log(answer3);
+        console.log(answer4);
+
+
+        $.ajax({
+            data: { quizId: quizId, answer1: answer1, answer2: answer2, answer3: answer3, answer4: answer4 },
+            url: url,
+            type: 'GET',
+            success: function (response) {
+                
+                clearFormClass();
+
+                if (response.answer1 == true) {
+                    document.getElementById(answer1Id).setAttribute("class", "form-check current")
+                } else if (response.answer1 == false) {
+                    document.getElementById(answer1Id).setAttribute("class", "form-check wrong")
+                }
+
+                if (response.answer2 == true) {
+                    document.getElementById(answer2Id).setAttribute("class", "form-check current")
+                } else if (response.answer2 == false) {
+                    document.getElementById(answer2Id).setAttribute("class", "form-check wrong")
+                }
+
+                if (response.answer3 == true) {
+                    document.getElementById(answer3Id).setAttribute("class", "form-check current")
+                } else if (response.answer3 == false) {
+                    document.getElementById(answer3Id).setAttribute("class", "form-check wrong")
+                }
+
+                if (response.answer4 == true) {
+                    document.getElementById(answer4Id).setAttribute("class", "form-check current")
+                } else if (response.answer4 == false) {
+                    document.getElementById(answer4Id).setAttribute("class", "form-check wrong")
+                }
+            },
+            error: function (err) {
+                console.log(err)
+            }
+        })
+
+
+    }
+
+
+    function clearFormClass() {
+
+        document.getElementById("form1A").setAttribute("class", "form-check")
+        document.getElementById("form1B").setAttribute("class", "form-check")
+        document.getElementById("form1C").setAttribute("class", "form-check")
+        document.getElementById("form1D").setAttribute("class", "form-check")
+
+        document.getElementById("form2A").setAttribute("class", "form-check")
+        document.getElementById("form2B").setAttribute("class", "form-check")
+        document.getElementById("form2C").setAttribute("class", "form-check")
+        document.getElementById("form2D").setAttribute("class", "form-check")
+
+        document.getElementById("form3A").setAttribute("class", "form-check")
+        document.getElementById("form3B").setAttribute("class", "form-check")
+        document.getElementById("form3C").setAttribute("class", "form-check")
+        document.getElementById("form3D").setAttribute("class", "form-check")
+
+        document.getElementById("form4A").setAttribute("class", "form-check")
+        document.getElementById("form4B").setAttribute("class", "form-check")
+        document.getElementById("form4C").setAttribute("class", "form-check")
+        document.getElementById("form4D").setAttribute("class", "form-check")
+    }
+</script>
+

@@ -1,0 +1,88 @@
+﻿@model List<New>;
+@{
+}
+
+<div class="container mt-2">
+    <form action="/Quiz/CreateANewQuiz" method="post">
+        <h3 class="alert alert-success">Yeni Soru Oluştur</h3>
+        <hr />
+        <div class="form-group mt-2">
+            <label for="title">Yazı</label>
+            <select id="title" onchange="setDescription()" name="title" class="form-control">
+                <option>Başlık seçiniz!</option>
+                @foreach (var item in Model)
+                {
+                    <option>@item.Title</option>
+                }
+
+            </select>
+        </div>
+        <div class="form-group mt-2">
+            <textarea class="form-control" id="description" rows="10" name="description" placeholder="Açıklama">
+
+        </textarea>
+        </div>
+        @for (int i = 0; i < 4; i++)
+        {
+            string questionName = "question" + (i + 1);
+            string answerAName = "answer" + (i + 1) + "A";
+            string answerBName = "answer" + (i + 1) + "B";
+            string answerCName = "answer" + (i + 1) + "C";
+            string answerDName = "answer" + (i + 1) + "D";
+            string rightAnswer1 = "rightAnswer" + (i + 1);
+            <div class="form-group mt-2">
+                <input class="form-control" name="@questionName" placeholder="Soru @(i+1)" value="@questionName" />
+            </div>
+            <div class="form-group mt-2">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="answerAName">A)</label>
+                        <input class="form-control" id="@answerAName" name="@answerAName" value="@answerAName" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="answer1B">B)</label>
+                        <input class="form-control" id="@answerBName" name="@answerBName" value="@answerBName" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="answerCName">C)</label>
+                        <input class="form-control" id="@answerCName" name="@answerCName" value="@answerCName" />
+                    </div>
+                    <div class="col-md-6">
+                        <label for="answerDName">D)</label>
+                        <input class="form-control" id="@answerDName" name="@answerDName" value="@answerDName" />
+                    </div>
+                    <div class="col-md-4 offset-4 mt-2">
+                        <select class="form-control" name="@rightAnswer1">
+                            <option>Doğru cevanı seçin...</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        }
+
+        <div class="col-md-4 offset-4 mt-4">
+            <button class="btn btn-primary w-100">Soru Oluştur</button>
+        </div>
+    </form>
+
+</div>
+
+<script>
+    function setDescription() {
+        let selectTitle = $("#title").val();        
+        var url = '@Url.Action("ReturnDescription", "Quiz")'
+        $.ajax({
+            data: { selectTitle: selectTitle },
+            url: url,
+            method: "GET",
+            success: function (res) {                
+                document.getElementById("description").innerHTML = res                
+            }
+        });
+    }
+</script>
